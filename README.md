@@ -53,7 +53,7 @@ The most contents except weather icons are located in `src` folder.
   - /reducers  : reducer files; explain below
   - /utils : commonly used function in the utils
   - /const : constant label string
-  - /.env : API key and API URL: I will email you this file
+- /.env : API key and API URL: I will email you this file
 ```
 
 ### components
@@ -67,7 +67,7 @@ There are three different types of components in the folder.
 - sub-components: all others
   - the components are reusable at any time.
 
-### .env
+### .env (root dir)
 
 I usually store sensitive information in the .env file so that it will not upload to github.
 I will share it with you when I submit the code challenge to git via email.
