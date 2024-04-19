@@ -1,0 +1,22 @@
+#weekForcast {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+#weekForcast .weatherIcon img {
+  width: 8em;
+}
+#weekForcast .forcastCard {
+  padding: 1em;
+}
+
+#weekForcast .forcastCard .tempContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#weekForcast .forcastCard .tempContainer .degree {
+  padding-left: 0.3rem;
+  font-size: 2rem;
+  font-weight: 400;
+}

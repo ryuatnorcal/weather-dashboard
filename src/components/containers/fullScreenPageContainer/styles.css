@@ -1,0 +1,8 @@
+#fullscreenContainer {
+  height: 100vh;
+}
+
+#fullscreenContainer .container,
+#fullscreenContainer .row {
+  height: inherit;
+}

@@ -1,0 +1,9 @@
+#error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#error .title {
+  font-size: 3rem;
+  font-weight: 600;
+}

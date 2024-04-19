@@ -1,0 +1,9 @@
+#weatherPage{
+  padding: 2rem 0 10rem 0;
+}
+.currentWeatherInfoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 90%;
+}

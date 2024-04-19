@@ -1,0 +1,22 @@
+.dividedInfo {
+  padding: 1em 0;
+}
+.dividedInfo .label {
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+}
+.dividedInfo .content {
+  font-size: 2rem;
+  font-weight: 200;
+  align-self: flex-end;
+}
+.dividedInfo .top {
+  border-bottom: 1px solid #000;
+}
+.dividedInfo .top,
+.dividedInfo .bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

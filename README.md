@@ -1,70 +1,100 @@
-# Getting Started with Create React App
+# Weather Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## How to run this?
 
-## Available Scripts
+1. First, plase make sure you have the `.env` file in the root folder.
 
-In the project directory, you can run:
+2. install npm packages by running
 
-### `npm start`
+```
+npm i
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3. To running locally please run following command
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```
+npm run start
+```
 
-### `npm test`
+## Tech choices
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- weather API: https://www.weatherapi.com/
 
-### `npm run build`
+  - reason: I can send either city or geo coordinates for requests and it can help reduce API calls compared with OpenWeather; the weather API can return up to 8 days forecast whereas the openWeather can return only 4 days for the free tier.
+  - possible weateher status: https://www.weatherapi.com/docs/weather_conditions.json
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Lineicons: https://lineicons.com/free-icons/weather-icons
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  - the weather Icon svg; there weren't all 48 kinds but I could map a decent amount of them. I had to reuse some of the icons
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- react-geolocated: https://www.npmjs.com/package/react-geolocated
 
-### `npm run eject`
+  - NPM package that take device geo location
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- react-router-dom: https://www.npmjs.com/package/react-router-dom
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  - routering in the app
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- date-and-time: https://www.npmjs.com/package/date-and-time
+  - I thought I could make my own but since somebody has already made it, why not leverage them?
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Project structure
 
-## Learn More
+The most contents except weather icons are located in `src` folder.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+- /public
+  - /weather-icons : all the weather icons go for easy access across the app
+- /src
+  - /__mocks__ : mock json files
+  - /assets : All other assets
+  - /components : react components; explain below
+  - /Providers : weather, location and status providers
+  - /reducers  : reducer files; explain below
+  - /utils : commonly used function in the utils
+  - /const : constant label string
+  - /.env : API key and API URL: I will email you this file
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### components
 
-### Code Splitting
+There are three different types of components in the folder.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- container component: `fullScreenPage`, `layoutContainer`
+  - It contains general layouts
+- page component: `weatherPage`
+  - It is a page-specific component; it also directs children of a container component
+- sub-components: all others
+  - the components are reusable at any time.
 
-### Analyzing the Bundle Size
+### .env
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+I usually store sensitive information in the .env file so that it will not upload to github.
+I will share it with you when I submit the code challenge to git via email.
 
-### Making a Progressive Web App
+### Design choice
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+I pick a minimalistic design for this project.
 
-### Advanced Configuration
+#### Landing page
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+The page shows only search bar and geo location button.
+The search bar also have a functionality to auto suggest as you type the city.
+![landing page](./public/screenshots/landingPage.png)
 
-### Deployment
+#### Dashboard page
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+The dashboard screen has a minimalistic design.
+It is easier for users to find the information they need.
 
-### `npm run build` fails to minify
+I put a search component on the bottom of the page so that a user can try
+another city.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![dashbaord](./public/screenshots//weatherPage.png)
+
+#### Error Screen
+
+I created an error component that can be reused for server errors.
+I only show messages that are relevant to users. (no stack trace and developer errors!)
+
+![Error](./public/screenshots/404.png)

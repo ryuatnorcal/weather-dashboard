@@ -1,0 +1,23 @@
+.temperature {
+  display: flex;
+  align-items:flex-end;
+}
+.temperature span {
+  text-align: right;
+  font-size: 8rem;
+}
+.temperature span.degree{
+  font-size: 5rem;
+  padding: 0.2em;
+}
+/** 
+*  Original asset created huge padding at bottom: 
+*  this solution is not ideal but shift 
+*  up the text show description at correct place
+*/
+/* .temperature img {
+  width: 10rem;
+  position: absolute;
+  left: 10rem;
+  top: 4rem;
+} */

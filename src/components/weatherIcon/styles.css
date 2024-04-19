@@ -1,0 +1,20 @@
+.weatherIcon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.weatherIcon .text {
+  text-align: center;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+}
+/** 
+*  Original asset created huge padding at bottom: 
+*  this solution is not ideal but shift 
+*  up the text show description at correct place
+*/
+.weatherIcon .shiftUpText {
+  position: absolute;
+  bottom: 8em;
+}
