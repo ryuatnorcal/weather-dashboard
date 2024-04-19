@@ -72,6 +72,12 @@ There are three different types of components in the folder.
 I usually store sensitive information in the .env file so that it will not upload to github.
 I will share it with you when I submit the code challenge to git via email.
 
+### State Management design
+
+I separated into two types of state management. The bigger data, I used the reducer hook to save to a state. In this project, weather API response with full data is handled as a bigger data set.
+
+The other one is for small or temporary data, such as auto-complete suggestions from weather API or all the flags in the app. These are handled by context so that the provider can broadcast values in every child's components.
+
 ### Design choice
 
 I pick a minimalistic design for this project.
