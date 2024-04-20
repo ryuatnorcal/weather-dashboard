@@ -10,7 +10,7 @@ export const ErrorMessage = ({ error, customMessage }) => {
       <div id="error">
         <div className="title">Sorry... </div>
         {customMessage && (<p>{customMessage}</p>)}
-        {error?.message && (<p>{error.message}</p>)}
+        {error?.msg && (<p>{error.msg}</p>)}
         {error?.code && (<p>{WEATHER_API_MESSAGE_MAP[error.code]}</p>)}
       </div>
     </FullScreenPageContainer>

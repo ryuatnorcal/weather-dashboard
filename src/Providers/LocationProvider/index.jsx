@@ -51,17 +51,17 @@ export const LocationProvider = ({children}) => {
   const getCurrentLocation = () => {
     if (!isGeolocationEnabled) {
       setError({
-        message: GEO_LOCATION_DISABLED
+        msg: GEO_LOCATION_DISABLED
       });
       return;
     };
     if (!isGeolocationAvailable) {
       setError({
-        message: GEO_LOCATION_NOT_AVAILABE
+        msg: GEO_LOCATION_NOT_AVAILABE
       });
       return;
     }
-    const { latitude, longitude } = coords;
+    const { latitude, longitude } = coords || {};
     setSuggestedLocations([]);
     setInputValue('');
     setSearchGeoCode({
