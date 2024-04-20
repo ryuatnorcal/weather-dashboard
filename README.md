@@ -16,6 +16,8 @@ npm i
 npm run start
 ```
 
+4. it shoud running on http://localhost:3000/
+
 ## Tech choices
 
 - weather API: https://www.weatherapi.com/
