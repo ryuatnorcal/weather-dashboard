@@ -24,7 +24,7 @@ export const LocationProvider = ({children}) => {
 
   const onChangeInputValue = async (event) => {
     setInputValue(event.target.value);
-    if (event.target.value.length > 3) {
+    if (event.target.value.length > 3 || event.target.value.length < 10) {
       try {
         const url = `${process.env.REACT_APP_WEATHER_API_URL}/search.json?key=${process.env.REACT_APP_WEATHER_API_KEY}&q=${event.target.value}`;
         const response = await axios({ method: 'GET', url })
